@@ -1,0 +1,10 @@
+myenv/
+__pycache__/
+*.pyd
+*.dll
+*.exe
+*.whl
+*.mp4
+*.wav
+*.tmp
+*.log
