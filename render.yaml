@@ -1,0 +1,16 @@
+<<<<<<< HEAD
+services:
+  - type: web
+    name: voice-remover-tool
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    pythonVersion: 3.10
+=======
+services:
+  - type: web
+    name: voice-remover-tool
+    env: python
+    buildCommand: ""
+    startCommand: "python app.py"
+>>>>>>> 70b86dc75e986558012332804af42e2127627c39

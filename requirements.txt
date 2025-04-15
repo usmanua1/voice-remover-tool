@@ -1,0 +1,15 @@
+<<<<<<< HEAD
+Flask==2.2.5
+moviepy==1.0.3
+spleeter==2.3.0
+numpy==1.23.5
+tensorflow==2.10.0
+pydub==0.25.1
+werkzeug==2.2.3
+=======
+Flask==2.2.5
+moviepy==1.0.3
+spleeter==2.2.2
+tensorflow==2.10.1
+numpy==1.23.5
+>>>>>>> 70b86dc75e986558012332804af42e2127627c39

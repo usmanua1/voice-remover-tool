@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Remover Tool</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background-color: #f2f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+    .section {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+    .section h2 {
+      margin-top: 0;
+      font-size: 24px;
+      font-weight: 600;
+      color: #333;
+    }
+    .section .icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    input[type="file"], input[type="number"] {
+      margin: 10px 0;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #007bff;
+      border: none;
+      padding: 12px 20px;
+      color: #fff;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .green-btn {
+      background-color: #28a745;
+    }
+    .green-btn:hover {
+      background-color: #1e7e34;
+    }
+    .timeline-section {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      width: 100%;
+      max-width: 800px;
+      text-align: center;
+    }
+    .timeline-box {
+      height: 40px;
+      width: 100%;
+      background-color: #e9ecef;
+      border-radius: 8px;
+      margin-top: 15px;
+      position: relative;
+    }
+    .timeline-selection {
+      background-color: rgba(40, 167, 69, 0.6);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <form class="section" action="/remove_music" method="post" enctype="multipart/form-data">
+    <div class="icon">🎧</div>
+    <h2>Remove Background Music</h2>
+    <input type="file" name="audio_file" required>
+    <button class="green-btn" type="submit">Upload & Remove Music</button>
+  </form>
+
+  <form class="section" action="/auto_trim" method="post" enctype="multipart/form-data">
+    <div class="icon">✂️</div>
+    <h2>Auto Trim Video</h2>
+    <input type="file" name="video_file" required>
+    <input type="number" name="trim_seconds" value="10" min="1" max="59" placeholder="Trim seconds per minute (e.g. 10)" required>
+    <button type="submit">Upload & Auto Trim</button>
+  </form>
+
+  <form class="timeline-section" action="/custom_music_removal" method="post" enctype="multipart/form-data">
+    <div class="icon">🎬</div>
+    <h2>Select Timeline Segments to Remove Music</h2>
+    <input type="file" name="video_file" required>
+    <div class="timeline-box">
+      <div class="timeline-selection" style="left: 10%; width: 15%;"></div>
+      <div class="timeline-selection" style="left: 40%; width: 20%;"></div>
+    </div>
+    <button class="green-btn" type="submit">Apply Music Removal</button>
+  </form>
+</body>
+</html>
